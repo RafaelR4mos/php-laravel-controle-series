@@ -1,6 +1,3 @@
-
-
-
 <form method="POST" action={{ $action }} class="form">
         @csrf
         @if($update)

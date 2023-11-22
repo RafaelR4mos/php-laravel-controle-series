@@ -6,6 +6,19 @@
     <title>{{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></head>
 <body>
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+            <div class="container-fluid">
+                <a href="{{route('series.index')}}" class="navbar-brand">Controle Séries</a>
+
+                @auth
+                <a href="{{route('logout')}}" class="btn btn-dark">Sair</a>
+                @endauth
+
+                @guest
+                    <a href="{{route('login')}}" class="btn btn-dark">Entrar</a>
+                @endguest
+            </div>
+        </nav>
     <main class="container">
         <h1>{{ $title }}</h1>
         <hr>
