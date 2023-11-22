@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeriesController;
-
+use App\Http\Controllers\SeasonsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,5 +28,10 @@ Route::controller(SeriesController::class)->group(function () {
     Route::delete('series/destroy/{series}', 'destroy')->name('series.destroy');
     Route::put('series/{series}', 'update')->name('series.update');
 });
+
+Route::controller(SeasonsController::class)->group(function () {
+    Route::get('series/{series}/seasons', 'index')->name('seasons.index');
+});
+
 
 
